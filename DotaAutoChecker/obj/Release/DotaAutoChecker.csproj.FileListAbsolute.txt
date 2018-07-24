@@ -1,0 +1,16 @@
+G:\workspace\DotaAutoChecker\DotaAutoChecker\bin\Release\DotaAutoChecker.exe.config
+G:\workspace\DotaAutoChecker\DotaAutoChecker\bin\Release\DotaAutoChecker.exe
+G:\workspace\DotaAutoChecker\DotaAutoChecker\bin\Release\DotaAutoChecker.pdb
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\Views\MainWindow.g.cs
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\App.g.cs
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\GeneratedInternalTypeHelper.g.cs
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker_MarkupCompile.cache
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker_MarkupCompile.lref
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\App.baml
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\Views\MainWindow.baml
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.g.resources
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.Properties.Resources.resources
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.csproj.GenerateResource.Cache
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.csproj.CoreCompileInputs.cache
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.exe
+G:\workspace\DotaAutoChecker\DotaAutoChecker\obj\Release\DotaAutoChecker.pdb

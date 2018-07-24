@@ -1,0 +1,19 @@
+﻿<Application x:Class="DotaAutoChecker.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DotaAutoChecker"
+             xmlns:properties="clr-namespace:DotaAutoChecker.Properties"
+             Exit="OnExit"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <properties:Settings x:Key="Settings"/>
+        <SolidColorBrush x:Key="TronBackground">#FF161C1D</SolidColorBrush>
+        <SolidColorBrush x:Key="TronBlueBrush">#FF00C6FF</SolidColorBrush>
+        <SolidColorBrush x:Key="TronGreenBrush">#FF50EB38</SolidColorBrush>
+        <Color x:Key="TronGreenColor">#FF50EB38</Color>
+        <SolidColorBrush x:Key="TronOrangeBrush">#FFE4500A</SolidColorBrush>
+        <SolidColorBrush x:Key="TronRedBrush">#FFE12621</SolidColorBrush>
+        <Color x:Key="TronRedColor">#FFE12621</Color>
+        <SolidColorBrush x:Key="TronYellowBrush">#FFECD13A</SolidColorBrush>
+    </Application.Resources>
+</Application>

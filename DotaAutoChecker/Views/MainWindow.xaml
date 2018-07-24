@@ -1,0 +1,166 @@
+﻿<Window x:Class="DotaAutoChecker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:DotaAutoChecker.Properties"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotaAutoChecker"
+        mc:Ignorable="d"
+        Title="DotaChecker" 
+        Height="120" 
+        Width="350" 
+        Loaded="Window_Activated" ShowInTaskbar="False" ResizeMode="NoResize" ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="BtnStyleTron" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Background" Value="{StaticResource TronBackground}" />
+            <Setter Property="Foreground" Value="{StaticResource TronGreenBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource TronGreenBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronGreenBrush}"/>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Direction="0" 
+                                                          RenderingBias="Quality" 
+                                                          ShadowDepth="0" 
+                                                          Color="{StaticResource TronGreenColor}" 
+                                                          BlurRadius="10" 
+                                                          Opacity="0.755"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronGreenBrush}"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronGreenBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" 
+                                      RenderingBias="Quality" 
+                                      ShadowDepth="0" 
+                                      Color="{StaticResource TronGreenColor}" 
+                                      BlurRadius="5" 
+                                      Opacity="0.755"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Visibility" Value="Visible"/>
+        </Style>
+        <Style x:Key="BtnTerminateStyleTron" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Background" Value="{StaticResource TronBackground}" />
+            <Setter Property="Foreground" Value="{StaticResource TronRedBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource TronRedBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronRedBrush}"/>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Direction="0" 
+                                                          RenderingBias="Quality" 
+                                                          ShadowDepth="0" 
+                                                          Color="{StaticResource TronRedColor}" 
+                                                          BlurRadius="12" 
+                                                          Opacity="0.755"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronRedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource TronBackground}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TronRedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" 
+                                      RenderingBias="Quality" 
+                                      ShadowDepth="0" 
+                                      Color="{StaticResource TronRedColor}" 
+                                      BlurRadius="5" 
+                                      Opacity="0.755"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Visibility" Value="Visible"/>
+        </Style>
+        <Style x:Key="BarStyleTron" TargetType="StatusBar">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Background" Value="#FF161C1D" />
+            <Setter Property="Foreground" Value="{StaticResource TronOrangeBrush}" />
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF161C1D" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove" Margin="0,0,0,-32">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Path to config file:" VerticalAlignment="Top" Foreground="{StaticResource TronBlueBrush}"/>
+        <TextBlock Margin="10,26,10,0" Text="{Binding Source={StaticResource Settings}, Path=ConfigPath}" VerticalAlignment="Top" Foreground="{StaticResource TronBlueBrush}"/>
+        <TextBlock Margin="10,47,195,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Foreground="{StaticResource TronYellowBrush}" HorizontalAlignment="Left" Text="Camera distance: "/>
+        <TextBlock x:Name="lblCameraDistance" Margin="110,47,195,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Foreground="{StaticResource TronYellowBrush}" HorizontalAlignment="Left"/>
+        <Button x:Name="BtnGetTarget" Content="Get Target" Height="23" Width="70" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,68,0,23" Click="BtnDirectory_Click" Style="{StaticResource BtnStyleTron}"  />
+        <Button x:Name="BtnFixDistance" Content="Fix distance" Height="23" Width="70" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="85,68,0,23" Click="BtnFindReplace_Click"  Style="{StaticResource BtnStyleTron}" RenderTransformOrigin="0.486,0.522" />
+        <Button x:Name="BtnTerminate" Content="Terminate" Height="23" Width="70" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="270,68,0,23" Click="BtnTerminate_Click"  Style="{StaticResource BtnTerminateStyleTron}" RenderTransformOrigin="0.5,0.478"/>
+        
+        <StatusBar x:Name="StatusBarPanel" Height="22" Margin="0,0,0,0" Grid.Row="1" Style="{StaticResource BarStyleTron}" VerticalAlignment="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <TextBlock x:Name="StatusTextBlock"></TextBlock>
+            <StatusBarItem Grid.Column="1">
+                <TextBlock x:Name="TimerBox"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        
+
+
+    </Grid>
+</Window>
+
